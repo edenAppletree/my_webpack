@@ -5,3 +5,4 @@ import './tab'
 // 2.引入jquery
 import $ from 'jquery'
 $('#swiper').css('background-color','yellowgreen')
+
