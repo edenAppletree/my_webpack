@@ -18,6 +18,10 @@ module.exports = {
             filename:'index.html'// 生成文件的名称
         }),
         new CleanWebpackPlugin()
-    ]
+    ],
+    devServer: {
+        port:3000,//端口号，下面设置运行时自动打开
+        open:true
+    }
     
 }
