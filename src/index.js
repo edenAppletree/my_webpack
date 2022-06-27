@@ -24,3 +24,6 @@ import imgUrl1 from './assets/logo_small.png';
 const img1 = document.createElement('img');
 img1.src = imgUrl1;
 document.body.appendChild(img1);
+
+// 6.引入字体图标
+import './assets/fonts/iconfont.css'

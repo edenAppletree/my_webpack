@@ -44,6 +44,18 @@ module.exports = {
             generator: {
                 filename: '[hash:6][ext]',//资源文件处理之后，输出的文件名
             },
+        },
+        {
+            test: /\.(eot|svg|ttf|woff|woff2)$/,//字体图标
+            type: 'asset/resource',
+            generator: {
+                filename: 'font-[name].[hash:6][ext]'
+            },
+            parser: {//解析器 规则
+                    dataUrlCondition: {//dataUrl的情况
+                      maxSize: 1 * 1024,//maxSize限制最大值
+                    },
+                  },
         }
         ]
     }
