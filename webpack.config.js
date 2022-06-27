@@ -56,6 +56,16 @@ module.exports = {
                       maxSize: 1 * 1024,//maxSize限制最大值
                     },
                   },
+        },
+        {
+            test: /\.js$/,//加载器 - 处理高版本js语法
+            exclude: /(node_modules)/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-env'] // 预设:转码规则(用bable开发环境本来预设的)
+                }
+            }  
         }
         ]
     }
