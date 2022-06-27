@@ -11,3 +11,16 @@ import './styles/index.css'
 
 // 4.引入less样式  加载器 - 处理less文件
 import './styles/index.less'
+
+// 5.引入图片
+import imgUrl from './assets/1.gif';
+
+let img = document.createElement('img');
+img.src = imgUrl;
+document.body.appendChild(img);
+
+import imgUrl1 from './assets/logo_small.png';
+
+const img1 = document.createElement('img');
+img1.src = imgUrl1;
+document.body.appendChild(img1);

@@ -32,6 +32,18 @@ module.exports = {
         {
             test: /\.less$/, // 匹配执行类型的文件
             use: ["style-loader", "css-loader", 'less-loader']
+        },
+        {
+            test: /\.(png|jpg|gif|jpeg)$/i,
+            type: 'asset',
+            parser: {//解析器
+                dataUrlCondition: {
+                    maxSize: 8 * 1024,
+                },
+            },
+            generator: {
+                filename: '[hash:6][ext]',//资源文件处理之后，输出的文件名
+            },
         }
         ]
     }
