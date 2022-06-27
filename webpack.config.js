@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 //  引入插件-自动清除dist目录内容
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
+
 module.exports = {
     mode:'development',//开发阶段模式，简易打包，打包速度快
     entry:'./src/index.js',
@@ -22,6 +23,12 @@ module.exports = {
     devServer: {
         port:3000,//端口号，下面设置运行时自动打开
         open:true
+    },
+    module: {
+        rules: [{
+            test:/\.css$/, // 匹配所有的css文件
+            use:['style-loader','css-loader']
+        }]
     }
     
 }

@@ -6,3 +6,6 @@ import './tab'
 import $ from 'jquery'
 $('#swiper').css('background-color','pink')
 
+// 3.引入css样式  加载器 - 处理css文件
+import './styles/index.css'
+
