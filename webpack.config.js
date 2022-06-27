@@ -4,6 +4,8 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 //  引入插件-自动清除dist目录内容
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+//  引入vue插件
+const { VueLoaderPlugin } = require('vue-loader')
 
 
 module.exports = {
@@ -18,7 +20,8 @@ module.exports = {
             template: './public/index.html',// 告诉webpack使用插件时, 以我们自己的html文件作为模板去生成dist/html文件
             filename: 'index.html'// 生成文件的名称
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new VueLoaderPlugin()
     ],
     devServer: {
         port: 3000,//端口号，下面设置运行时自动打开
@@ -66,6 +69,10 @@ module.exports = {
                     presets: ['@babel/preset-env'] // 预设:转码规则(用bable开发环境本来预设的)
                 }
             }  
+        },
+        {
+            test: /\.vue$/,
+            loader: 'vue-loader' 
         }
         ]
     }
